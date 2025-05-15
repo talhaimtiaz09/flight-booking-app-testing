@@ -1,0 +1,22 @@
+from,to,departDate
+Dubai,Madrid,2025-06-28
+Los Angeles,Beijing,2025-06-28
+Doha,New York,2025-06-20
+San Francisco,Berlin,2025-07-04
+Moscow,Chicago,2025-06-06
+Toronto,San Francisco,2025-06-02
+Seoul,Beijing,2025-05-23
+Rome,Los Angeles,2025-07-09
+Madrid,Toronto,2025-06-19
+Dubai,Bangkok,2025-05-30
+London,New York,2025-07-07
+Singapore,Dubai,2025-06-28
+Sydney,San Francisco,2025-07-09
+Paris,Tokyo,2025-06-15
+Bangkok,Hong Kong,2025-06-12
+Mumbai,London,2025-07-15
+Tokyo,Madrid,2025-07-07
+Los Angeles,Sydney,2025-06-10
+Melbourne,San Francisco,2025-07-05
+Chicago,Singapore,2025-06-19
+San Francisco,Mumbai,2025-07-06

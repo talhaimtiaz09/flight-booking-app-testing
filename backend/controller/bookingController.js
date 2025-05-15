@@ -67,28 +67,30 @@ export const getCheckoutSession = async (req, res) => {
     flight.bookedSeats.push(...selectedSeats); // Update bookedSeats array
     await flight.save();
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      mode: "payment",
-      success_url: `${process.env.CLIENT_SITE_URL}checkout-page`,
-      cancel_url: `${process.env.CLIENT_SITE_URL}`,
-      customer_email: user.email,
-      client_reference_id: req.params.flightId,
-      line_items: [
-        {
-          price_data: {
-            currency: "inr",
-            unit_amount: flight.price * 100,
-            product_data: {
-              name: `${flight.airline.airlineName} - ${flight.from} to ${flight.to}`,
-              description: `Departure: ${flight.departDate} ${flight.departTime}, Arrival: ${flight.arriveDate} ${flight.arriveTime}`,
-              images: [flight.airline.airlineLogo],
-            },
-          },
-          quantity: numPassengers,
-        },
-      ],
-    });
+    // const session = await stripe.checkout.sessions.create({
+    //   payment_method_types: ["card"],
+    //   mode: "payment",
+    //   success_url: `${process.env.CLIENT_SITE_URL}checkout-page`,
+    //   cancel_url: `${process.env.CLIENT_SITE_URL}`,
+    //   customer_email: user.email,
+    //   client_reference_id: req.params.flightId,
+    //   line_items: [
+    //     {
+    //       price_data: {
+    //         currency: "inr",
+    //         unit_amount: flight.price * 100,
+    //         product_data: {
+    //           name: `${flight.airline.airlineName} - ${flight.from} to ${flight.to}`,
+    //           description: `Departure: ${flight.departDate} ${flight.departTime}, Arrival: ${flight.arriveDate} ${flight.arriveTime}`,
+    //           images: [flight.airline.airlineLogo],
+    //         },
+    //       },
+    //       quantity: numPassengers,
+    //     },
+    //   ],
+    // });
+
+    const session = "Payment done"
 
     res.status(200).json({
       success: true,
